@@ -24,7 +24,6 @@ yargs.command({
         }
     },
     handler: (argv) => {
-        // console.log(`새로운 노트가 추가되었어요.\n Title:${argv.title}, Body:${argv.body}`);
         note.addNote(argv);
     }
 })
