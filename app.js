@@ -1,4 +1,6 @@
-const yargs = require('yargs')
+const yargs = require('yargs');
+
+const note = require('./note.js');
 
 yargs.version('1.0.0');
 
@@ -22,7 +24,8 @@ yargs.command({
         }
     },
     handler: (argv) => {
-        console.log(`새로운 노트가 추가되었어요.\n Title:${argv.title}, Body:${argv.body}`);
+        // console.log(`새로운 노트가 추가되었어요.\n Title:${argv.title}, Body:${argv.body}`);
+        note.addNote(argv);
     }
 })
 
@@ -30,14 +33,14 @@ yargs.command({
     command: 'remove',
     describe: 'Remove note',
     handler: () => {
-        console.log('노트를 지웠습니다.');
+        note.removeNote();
     }
 })
 yargs.command({
     command: 'list',
     describe: 'Show note list',
     handler: () => {
-        console.log('노트 리스트를 출력합니다.');
+        note.getNoteList();
     }
 })
 
