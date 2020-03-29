@@ -6,7 +6,7 @@ yargs.version('1.0.0');
 
 yargs.command({
     command: 'add',
-    describe: 'Add a new note',
+    describe: 'Add a new note, --title="제목", --body="내용", --author(option)',
     builder: {
         title: {
             describe: 'Note title',
